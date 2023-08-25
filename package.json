@@ -1,0 +1,31 @@
+{
+  "name": "forum-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/vilsonfcastilho/forum-server.git",
+  "author": "vilsonfcastilho <vilsonfcastilho@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.4",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.4.1",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-standard-with-typescript": "^38.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-vitest-globals": "^1.4.0",
+    "prettier": "^3.0.2",
+    "typescript": "*",
+    "vite-tsconfig-paths": "^4.2.0",
+    "vitest": "^0.34.2"
+  }
+}
