@@ -3,7 +3,7 @@ import { type IAnswerCommentsRepository } from '@/domain/forum/application/repos
 import { AnswerComment } from '@/domain/forum/enterprise/entities/answer-comment'
 import { UniqueEntityId } from '@/core/entities/unique-entity-id'
 import { Either, left, right } from '@/core/either'
-import { ResourceNotFoundError } from '@/domain/forum/application/use-cases/errors/resource-not-found-error'
+import { ResourceNotFoundError } from '@/core/errors/errors/resource-not-found-error'
 
 interface ICommentAnswerUseCaseRequest {
   authorId: string

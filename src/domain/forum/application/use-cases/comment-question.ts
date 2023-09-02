@@ -3,7 +3,7 @@ import { type IQuestionCommentsRepository } from '@/domain/forum/application/rep
 import { QuestionComment } from '@/domain/forum/enterprise/entities/question-comment'
 import { UniqueEntityId } from '@/core/entities/unique-entity-id'
 import { Either, left, right } from '@/core/either'
-import { ResourceNotFoundError } from '@/domain/forum/application/use-cases/errors/resource-not-found-error'
+import { ResourceNotFoundError } from '@/core/errors/errors/resource-not-found-error'
 
 interface ICommentQuestionUseCaseRequest {
   authorId: string
