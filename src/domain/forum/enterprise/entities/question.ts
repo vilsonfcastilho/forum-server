@@ -3,6 +3,7 @@ import { QuestionAttachmentList } from '@/domain/forum/enterprise/entities/quest
 import { Slug } from '@/domain/forum/enterprise/entities/value-objects/slug'
 import { type UniqueEntityId } from '@/core/entities/unique-entity-id'
 import { type Optional } from '@/core/types/optional'
+import { QuestionBestAnswerChosenEvent } from '@/domain/forum/enterprise/events/question-best-answer-chosen-event'
 
 export interface IQuestionProps {
   authorId: UniqueEntityId
@@ -57,7 +58,13 @@ export class Question extends AggregateRoot<IQuestionProps> {
   }
 
   set bestAnswerId(bestAnswerId: UniqueEntityId | undefined) {
+    if (bestAnswerId && bestAnswerId !== this.props.bestAnswerId) {
+      this.addDomainEvent(new QuestionBestAnswerChosenEvent(this, bestAnswerId))
+    }
+
     this.props.bestAnswerId = bestAnswerId
+
+    this.touch()
   }
 
   set title(title: string) {
